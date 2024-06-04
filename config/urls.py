@@ -12,7 +12,9 @@ from drf_spectacular.views import SpectacularSwaggerView
 from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns = [
-    path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
+    path(
+        "", TemplateView.as_view(template_name="portfolio/portfolio.html"), name="home"
+    ),
     path(
         "about/",
         TemplateView.as_view(template_name="pages/about.html"),
