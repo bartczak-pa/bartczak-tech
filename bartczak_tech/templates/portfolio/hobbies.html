@@ -1,0 +1,30 @@
+{% load static i18n %}
+
+{% if hobbies %}
+  <section id="services" class="full-height px-lg-5">
+    <div class="container">
+      <div class="row pb-4" data-aos="fade-up">
+        <div class="col-lg-8">
+          <h6 class="text-brand">HOBBIES</h6>
+          <h1>What are my passions?</h1>
+        </div>
+      </div>
+      <div class="row gy-4">
+        {% for hobby in hobbies %}
+          <div class="col-md-4" data-aos="fade-up">
+            <div class="service p-4 bg-base rounded-4 shadow-effect">
+              <div class="iconbox rounded-4">
+                <i class="las la-laptop-code"></i>
+              </div>
+              <h5 class="mt-4 mb-2">{{ hobby.name }}</h5>
+              <p>{{ hobby.description }}</p>
+              {% if hobby.link and hobby.link_text %}
+                <a href="{{ hobby.link }}" class="link-custom">{{ hobby.link_text }}</a>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endif %}
