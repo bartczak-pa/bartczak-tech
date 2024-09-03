@@ -31,6 +31,7 @@
     {% endblock javascript %}
   </head>
   <body class="{% block bodyclass %}{% endblock bodyclass %}">
+    {% include 'portfolio/navbar.html' %}
     {% block body %}
     {% endblock body %}
     {% block inline_javascript %}
