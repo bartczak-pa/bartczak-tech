@@ -11,5 +11,15 @@ class Hobby(models.Model):
     class Meta:
         verbose_name_plural = "Hobbies"
 
-    def __str__(self):
+    def __str__(self) -> str:
+        return self.name
+
+
+class Technology(models.Model):
+    name = models.CharField(max_length=50, unique=True)
+
+    class Meta:
+        verbose_name_plural = "Technologies"
+
+    def __str__(self) -> str:
         return self.name
