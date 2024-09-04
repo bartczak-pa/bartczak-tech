@@ -24,7 +24,6 @@ def project_detail(request, project_id):
         "name": project.name,
         "short_description": project.short_description,
         "description": project.description,
-        "image_url": project.image.url if project.image else "",
         "technologies": [technology.name for technology in project.technologies.all()],
         "github_link": project.github_link,
         "project_link": project.project_link,
