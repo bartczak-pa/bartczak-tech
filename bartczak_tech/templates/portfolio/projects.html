@@ -1,7 +1,7 @@
-{% load static i18n %}
+{% load static %}
 
 {% if projects %}
-  <section id="work" class="full-height px-lg-5">
+  <section id="projects" class="full-height px-lg-5">
     <div class="container">
       <div class="row pb-4" data-aos="fade-up">
         <div class="col-lg-8">
@@ -19,14 +19,17 @@
                        src="{{ project.image.url }}"
                        alt="Image showing {{ project.name }}" />
                 {% else %}
-                  <!-- TODO: Add replacement for default image-->
-                  <img class="rounded-4" src="{% static 'images/project-1.jpg' %}" alt="" />
+                  <img class="rounded-4"
+                       src="{% static 'images/project-default-photo.png' %}"
+                       alt="Image showing {{ project.name }}" />
                 {% endif %}
               </div>
               <div class="card-custom-content p-4">
                 <h4>{{ project.name }}</h4>
                 <p>{{ project.short_description }}</p>
-                <a href="#" class="link-custom">Read More</a>
+                <a href="#"
+                   class="link-custom project-link"
+                   data-project-id="{{ project.id }}">Read More</a>
               </div>
             </div>
           </div>
@@ -34,4 +37,6 @@
       </div>
     </div>
   </section>
+  {% include "portfolio/project_modal.html" %}
 {% endif %}
+<script></script>
