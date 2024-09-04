@@ -4,26 +4,8 @@
 
 {% block body %}
   <body data-bs-spy="scroll" data-bs-target=".navbar">
-    <!-- CONTENT WRAPPER -->
     <div id="content-wrapper">
-      <!-- HOME -->
-      <section id="home" class="full-height px-lg-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-10">
-              <h1 class="display-4 fw-bold" data-aos="fade-up">
-                I'M A <span class="text-brand">BEGINNING SOFTWARE DEVELOPER</span> AND PASSIONATE PHOTOGRAPHER
-              </h1>
-              <p class="lead mt-2 mb-4" data-aos="fade-up" data-aos-delay="300">
-                I am Pawel Bartczak and this page shows my passions and work
-              </p>
-              <div data-aos="fade-up" data-aos-delay="600">
-                <a href="#work" class="btn btn-brand me-3">Explore My Work</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {% include 'portfolio/header.html' %}
       {% include 'portfolio/hobbies.html' with hobbies=hobbies_list %}
       {% include 'portfolio/projects.html' with projects=projects_list %}
       <!-- TODO: Include blog when completed -->
