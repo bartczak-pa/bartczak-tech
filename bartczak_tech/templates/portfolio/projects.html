@@ -20,6 +20,7 @@
                        alt="Image showing {{ project.name }}" />
                 {% else %}
                   <img class="rounded-4"
+                       loading="lazy"
                        src="{% static 'images/project-default-photo.png' %}"
                        alt="Image showing {{ project.name }}" />
                 {% endif %}
